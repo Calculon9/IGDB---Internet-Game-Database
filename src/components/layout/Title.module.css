@@ -1,0 +1,9 @@
+.page_title {
+    text-align: center;
+    background-color: #77002e;
+    border-radius: 20px;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 119);
+}

@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import Layout from "./components/layout/Layout";
+import Games from "./pages/Games";
+import Favourites from "./pages/Favourites";
+import AddGame from "./pages/Add-Game";
+import ModalBG from "./components/ui/ModalBG";
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { useState } from 'react'
+import GameContextProvider from '../src/context/GameContext.js'
+import ModalContextProvider from "./context/ModalContext";
 
 function App() {
+
+  // State for current page that's displayed
+  const [currentPage, setCurrentPage] = useState({})
+
+  // State for Favourites
+  const [favourites, setFavourites] = useState({})
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <GameContextProvider>
+        <ModalContextProvider>
+            <Layout>
+              <Switch>
+                <Route path='/' exact>
+                  <Games currentPage={currentPage} setCurrentPage={setCurrentPage} favourites={favourites} setFavourites={setFavourites} />
+                </Route>
+                <Route path='/favourites'>
+                  <Favourites currentPage={currentPage} setCurrentPage={setCurrentPage} />
+                </Route>
+                <Route path='/add-game'>
+                  <AddGame currentPage={currentPage} setCurrentPage={setCurrentPage} />
+                </Route>
+              </Switch>
+            </Layout>
+        </ModalContextProvider>
+      </GameContextProvider>
+    </Router >
   );
 }
 

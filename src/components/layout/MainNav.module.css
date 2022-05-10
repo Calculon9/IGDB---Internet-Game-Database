@@ -1,0 +1,46 @@
+.header {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #77002e;
+  }
+
+  .header ul {
+    list-style: none;
+    display: flex;
+  }
+
+  .header li {
+    margin-left: 3rem;
+  }
+
+  .header a {
+    text-decoration: none;
+    margin-left: 3rem;
+  }
+
+  .header button {
+    background-color: rgb(255, 255, 119);
+    color: #77002e;
+    font-weight: bold; 
+    cursor: pointer;
+    outline: none;
+    border: none;
+    width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .header button:hover {
+    box-shadow: 2px 4px rgb(65, 0, 0);
+  }
+
+  .header h1 {
+    color: rgb(255, 255, 119);
+  }
+
+  .header h1 span{
+    font-size: 0.6em;
+  }
