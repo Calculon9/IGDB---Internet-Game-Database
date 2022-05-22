@@ -2,7 +2,6 @@ import Layout from "./components/layout/Layout";
 import Games from "./pages/Games";
 import Favourites from "./pages/Favourites";
 import AddGame from "./pages/Add-Game";
-import ModalBG from "./components/ui/ModalBG";
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { useState } from 'react'
